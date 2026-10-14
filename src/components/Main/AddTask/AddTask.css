@@ -1,0 +1,65 @@
+:root {
+  --orange: #ffa734;
+  --dark-orange: #f28f0d;
+  --light-orange: rgb(252, 204, 120);
+  --pink: #f29dc0;
+  --yellow: #f2ee63;
+  --dark-cream: #fdf7cb;
+  --cream: #fffbde;
+  --chocolate: #994f00;
+  --dark-chocolate: #532c02;
+  --blue: #97baf0;
+  --black: #000;
+  --white: #fff;
+}
+
+.add-task-form {
+  width: min(90%, 550px);
+  height: clamp(44px, 5vh, 56px);
+  margin: 20px auto;
+  background-color: var(--light-orange);
+  border: 2px solid var(--chocolate);
+  box-shadow: clamp(3px, 0.5vw, 5px) clamp(3px, 0.5vw, 5px) 0px
+    var(--dark-chocolate);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.add-task-form label {
+  flex: 1;
+  width: 100%;
+}
+.add-task-form input {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  padding-left: 16px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: var(--dark-chocolate);
+  font-size: clamp(0.85rem, 1vw + 0.5rem, 1.05rem);
+}
+
+.add-task-form input::placeholder {
+  color: var(--chocolate);
+  opacity: 0.75;
+}
+.add-task-form button {
+  height: 100%;
+  padding: 0 clamp(12px, 2vw, 24px);
+  background-color: var(--orange);
+  color: var(--white);
+  border: none;
+  font-size: clamp(0.8rem, 0.8vw + 0.5rem, 0.95rem);
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.add-task-form button:hover {
+  background-color: var(--dark-orange);
+}

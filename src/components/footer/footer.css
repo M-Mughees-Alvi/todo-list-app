@@ -1,0 +1,23 @@
+:root {
+  --orange: #ffa734;
+  --dark-orange: #f28f0d;
+  --pink: #f29dc0;
+  --yellow: #f2ee63;
+  --dark-cream: #fdf7cb;
+  --cream: #fffbde;
+  --chocolate: #994f00;
+  --dark-chocolate: #532c02;
+  --blue: #97baf0;
+  --black: #000;
+  --white: #fff;
+}
+.footer-container {
+  height: clamp(35px, 5vh, 70px);
+  width: 100%;
+  background-color: var(--chocolate);
+  color: var(--cream);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0px;
+}

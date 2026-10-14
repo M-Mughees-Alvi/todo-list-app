@@ -1,0 +1,204 @@
+:root {
+  --orange: #ffa734;
+  --dark-orange: #f28f0d;
+  --light-orange: rgb(252, 204, 120);
+  --pink: #f29dc0;
+  --yellow: #f2ee63;
+  --dark-cream: #fdf7cb;
+  --cream: #fffbde;
+  --chocolate: #994f00;
+  --dark-chocolate: #532c02;
+  --blue: #97baf0;
+  --black: #000;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.list-container {
+  min-height: 50dvh;
+  width: min(95%, 800px);
+  margin: 20px auto 40px;
+  background-color: var(--light-orange);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: clamp(4px, 1vw, 8px) clamp(4px, 1vw, 8px) 0px
+    var(--dark-chocolate);
+  border: 2px solid var(--chocolate);
+}
+
+.empty-message {
+  color: var(--chocolate);
+  text-align: center;
+  font-size: clamp(0.85rem, 0.6vw + 0.75rem, 1.05rem);
+  line-height: 2;
+  padding: clamp(20px, 4vw, 40px) 16px;
+  font-weight: 500;
+}
+.list-header {
+  background-color: var(--orange);
+  color: var(--white);
+  font-size: clamp(0.95rem, 1vw + 0.6rem, 1.25rem);
+  font-weight: 600;
+  text-align: center;
+  padding: clamp(8px, 1.5vw, 14px) clamp(10px, 2vw, 16px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(6px, 1vw, 12px);
+}
+
+.list-header p {
+  margin: 0;
+  flex: 1;
+  min-width: 110px;
+}
+
+.list-header button {
+  font-size: clamp(0.7rem, 0.6vw + 0.55rem, 0.95rem);
+  height: clamp(32px, 3.5vw, 44px);
+  width: clamp(75px, 12vw, 130px);
+  padding: clamp(4px, 0.5vw, 8px) clamp(6px, 1vw, 14px);
+  box-shadow: clamp(2px, 0.3vw, 4px) clamp(2px, 0.3vw, 4px) 0px
+    var(--dark-chocolate);
+  background-color: var(--chocolate);
+  color: var(--dark-cream);
+  border: 2px solid var(--dark-cream);
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease,
+    background-color 0.2s ease;
+}
+
+.list-header button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--dark-chocolate);
+}
+
+.list-header button:hover {
+  background-color: var(--dark-orange);
+}
+
+/* Task List Outer Wrapper */
+.todo-list {
+  flex: 1;
+  width: 100%;
+  padding: clamp(12px, 3vw, 24px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.5vw, 14px);
+}
+
+/* Individual Task Row */
+.task {
+  width: 100%;
+  padding: clamp(8px, 2vw, 12px) clamp(10px, 2.5vw, 16px);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(8px, 2vw, 14px);
+  box-shadow: clamp(3px, 0.8vw, 5px) clamp(3px, 0.8vw, 5px) 0px
+    var(--dark-chocolate);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.task:hover {
+  transform: translateY(-2px);
+  box-shadow: none;
+}
+
+/* Task Title Text */
+.task p {
+  margin: 0;
+  flex: 1;
+  color: var(--dark-chocolate);
+  font-size: clamp(0.85rem, 0.5vw + 0.75rem, 1rem);
+  font-weight: 500;
+  word-break: break-word;
+}
+
+/* Checkbox container & Input */
+.task label {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.task input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: clamp(18px, 2.5vw, 22px);
+  height: clamp(18px, 2.5vw, 22px);
+  border: 2px solid var(--chocolate);
+  border-radius: 6px;
+  background-color: var(--white);
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  flex-shrink: 0;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.task input[type="checkbox"]::before {
+  content: "✓";
+  font-size: clamp(11px, 1.5vw, 14px);
+  font-weight: bold;
+  color: var(--white);
+  transform: scale(0);
+  transition: transform 0.15s ease-in-out;
+}
+
+.task input[type="checkbox"]:checked {
+  background-color: var(--chocolate);
+  border-color: var(--dark-chocolate);
+}
+
+.task input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+/* Task Delete Button */
+.task button {
+  background-color: var(--chocolate);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  width: clamp(26px, 3.5vw, 32px);
+  height: clamp(26px, 3.5vw, 32px);
+  font-size: clamp(0.75rem, 1vw, 0.9rem);
+  font-weight: bold;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.task button:hover {
+  background-color: var(--dark-chocolate);
+}
+
+.task button:active {
+  transform: scale(0.92);
+}

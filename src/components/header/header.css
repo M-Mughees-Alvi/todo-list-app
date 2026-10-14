@@ -1,0 +1,121 @@
+:root {
+  --orange: #ffa734;
+  --dark-orange: #f28f0d;
+  --pink: #f29dc0;
+  --yellow: #f2ee63;
+  --dark-cream: #fdf7cb;
+  --cream: #fffbde;
+  --chocolate: #994f00;
+  --dark-chocolate: #532c02;
+  --blue: #97baf0;
+  --black: #000;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header-container {
+  width: 100%;
+  height: clamp(60px, 9dvh, 90px);
+  background-color: var(--chocolate);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: clamp(40px, 12vw, 160px);
+  padding-right: clamp(16px, 4vw, 40px);
+  gap: 20px;
+}
+
+.header-container img {
+  width: auto;
+  height: clamp(35px, 4vw, 65px);
+  max-height: 100%;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.header-container ul {
+  width: auto;
+  list-style-type: none;
+  color: var(--white);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: clamp(10px, 2vw, 24px);
+}
+
+.buttons {
+  position: relative;
+  background-color: var(--orange);
+  color: var(--dark-cream);
+  padding: clamp(6px, 1vw, 10px) clamp(10px, 1.5vw, 18px);
+  border: 1px solid var(--dark-cream);
+  border-radius: 10px;
+  box-shadow: 5px 5px 0px var(--dark-chocolate);
+  cursor: pointer;
+  font-size: clamp(0.75rem, 0.6vw + 0.55rem, 0.95rem);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.buttons:hover {
+  background-color: var(--dark-orange);
+}
+
+.info {
+  width: 160px;
+  height: 160px;
+  background-color: var(--white);
+  color: var(--chocolate);
+
+  text-align: center;
+  font-size: 0.85rem;
+  line-height: 1.35;
+  white-space: normal;
+
+  position: absolute;
+  top: calc(100% + 20px);
+  left: 50%;
+
+  border: 2px solid var(--chocolate);
+  border-radius: 20px;
+  box-shadow: 5px 5px 0px var(--dark-chocolate);
+  padding: 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  transform: translateX(-50%) scale(0.8);
+  pointer-events: none;
+  z-index: 10;
+
+  transition:
+    opacity 0.2s ease-out,
+    transform 0.2s ease-out;
+}
+
+.buttons:hover .info {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+.links {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: clamp(0.8rem, 0.6vw + 0.6rem, 1rem);
+  transition: color 0.2s ease;
+}
+
+.links:hover {
+  color: var(--dark-chocolate);
+}
